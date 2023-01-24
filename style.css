@@ -1,0 +1,251 @@
+:root{
+    --bg_color: linear-gradient(45deg, #830083fb -5%,#0707fffb 105%);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Times New Roman';/*SORA,INTER*/
+    line-height: 1.5;
+    text-align: center;
+    scroll-behavior: smooth;
+    transition: 300ms;
+}
+body{
+    width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #F2F2F2;
+}
+article{
+    width: 100%;
+    min-height: 80%;
+    display: grid;
+    background: #FFFFFF;
+}
+article .box{
+    width: 100%;
+    min-height: 40vh;
+    padding: 30px 10px;
+}
+.box:nth-child(odd){
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.box_1{ background: url('/Images/All_Nairobi.jpg');}
+.box_3{ background: url('/Images/Twilight.jpg');}
+.box_5{ background: url('/Images/Windy_road.jpg');}
+.box_7{ background: url('/Images/open_Road.jpg');}
+.box:nth-child(even){
+    display: grid;
+    place-items: center;
+}
+article>.box_2,
+article>.box_8{ background: #FFCD17;}
+.box h1{
+    width: 100%;
+    padding: 0 0 20px;
+    line-height: 1.2;
+    font-weight: 600;
+    font-size: 2.5em;
+    font-family: Helvetica, sans-serif;
+}
+.box p{
+    width: 90%;
+    padding: 10px;
+    font-size: 1.15em;
+    color: #0000009f;
+}
+.box_6 div{
+    width: 100%;
+    height: fit-content;
+}
+.box_6 ul{
+    list-style: none;
+    width: 90%;
+    padding: 8px;
+    display: grid;
+    font-size: 1.2em;
+    line-height: 1.2;
+    color: #0000009f;
+}
+.box_6 li{ list-style-type: square;}
+.box>a{
+    margin-top: 20px;
+    padding: 8px 20px;
+    border-radius: 24px;
+    letter-spacing: 1.5px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+}
+.box a i{
+    width: 10px;
+    font-weight: 700;
+}
+.box:not(:nth-child(2),:last-child)>a{ 
+    padding: 10px 25px;
+    background: #FFCD17;
+}
+.box_2>a{ background: #F2F2F2;}
+.box>a:hover{ letter-spacing: 3px;}
+.box_8 span{
+    width: 50%;
+    min-height: 10vh;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.15em;
+    color: #0000009f;
+}
+.box_8 span a{
+    width: 38px;
+    height: 38px;
+    padding: 8px;
+    border-radius: 50%;
+    background: #F2F2F2;
+    line-height: 38px;
+}
+.box_8 span a:hover{ transform: scale(1.1);}
+aside{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+}
+aside a{
+    width: 112px;
+    height: 24px;
+    padding: 6px 4px;
+    margin-left: 50px;
+    border-radius: 24px;
+    color: #7373737f;
+    font-family: arial;
+    line-height: 12px;
+    text-align: center;
+    font-size: 12px;
+    text-decoration: none;
+}
+aside a::after{
+    content: ' )';
+    display: inline;
+}
+aside a::before{
+    content: '( ';
+    display: inline;
+}
+aside a:hover::after,
+aside a:hover::before{ display: none;}
+aside a:hover{
+    background: var(--bg_color);
+    background-size: 150%;
+    color: #F2F2F2;
+}
+/* weareables and extra small mobile devices : 320px and down */
+@media screen and (max-width: 320px){}
+/* mobile devices : 600px and down */
+@media screen and (max-width: 600px){}
+/* large screen mobile devices and small tablets : 768px and down */
+@media screen and (min-width: 600px){
+    article{ 
+        width: 90%;
+        margin-top: 5%;
+    }
+    article .box{ min-height: 50vh;}
+    .box p{ width: 95%;}
+    aside{ 
+        height: 20vh;
+        margin-left: 100px;
+    }
+}
+@media screen and ( 600px <= width <= 768px){
+    article{ 
+        width: 90%;
+        margin-top: 5%;
+    }
+    article .box{ min-height: 50vh;}
+    .box p{ width: 95%;}
+    aside{ 
+        height: 20vh;
+        margin-left: 100px;
+    }
+}
+/* medium & large screen tablets and laptops : 1024px and down */
+@media screen and (min-width:900px){
+    article{ 
+        grid-template-columns: 1fr 1fr;
+    }
+    article .box{ min-height: 70vh;}
+    .box:nth-child(3),
+    .box:nth-child(7){ grid-column: 2/3;}
+    .box
+    .box:nth-child(4),
+    .box:nth-child(8){ grid-column: 1/2;}
+    :nth-child(4),
+    .box:nth-child(3){ grid-row: 2/3;}
+    .box:nth-child(7),
+    .box:nth-child(8){ grid-row: 5/6;}
+    .box p{ width: 95%;}
+    aside{ 
+        height: 20vh;
+        margin-left: 100px;
+    }
+}
+@media screen and ( 769px <= width <= 1024px){
+    article{ 
+        width: 90%;
+        margin-top: 5%;
+        grid-template-columns: 1fr 1fr;
+    }
+    article .box{ min-height: 70vh;}
+    .box p{ width: 95%;}
+    .box:nth-child(3),
+    .box:nth-child(7){ grid-column: 2/3;}
+    .box
+    .box:nth-child(4),
+    .box:nth-child(8){ grid-column: 1/2;}
+    :nth-child(4),
+    .box:nth-child(3){ grid-row: 2/3;}
+    .box:nth-child(7),
+    .box:nth-child(8){ grid-row: 5/6;}
+    aside{ 
+        height: 20vh;
+        margin-left: 100px;
+    }
+}
+/* desktops & large screens(TV,etc) : 1200px and down */
+@media screen and (min-width:1024px){
+    aside{ 
+        height: 30vh;
+        margin-left: 150px;
+    }
+}
+@media screen and ( 1025px <= width <= 1200px){
+    article{ 
+        width: 90%;
+        margin-top: 5%;
+        grid-template-columns: 1fr 1fr;
+    }
+    article .box{ min-height: 70vh;}
+    .box p{ width: 95%;}
+    .box:nth-child(3),
+    .box:nth-child(7){ grid-column: 2/3;}
+    .box
+    .box:nth-child(4),
+    .box:nth-child(8){ grid-column: 1/2;}
+    :nth-child(4),
+    .box:nth-child(3){ grid-row: 2/3;}
+    .box:nth-child(7),
+    .box:nth-child(8){ grid-row: 5/6;}
+    aside{ 
+        height: 30vh;
+        margin-left: 150px;
+    }
+}
+/* extra large screens : 1201px and up */
+@media screen and (min-width: 1200px){}
